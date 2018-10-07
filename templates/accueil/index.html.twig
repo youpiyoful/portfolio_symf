@@ -2,7 +2,10 @@
 
 {% block title %}Accueil index{% endblock %}
 
-{% block body %}
+    {% block header %}
+        {{ knp_menu_render('main') }}
+    {% endblock %}
+{% block main %}
     <h1>Accueil index</h1>
 
     <table class="table">
@@ -19,8 +22,8 @@
                 <td>{{ accueil.id }}</td>
                 <td>{{ accueil.citation }}</td>
                 <td>
-                    <a href="{{ path('accueil_show', {'id': accueil.id}) }}">show</a>
-                    <a href="{{ path('accueil_edit', {'id': accueil.id}) }}">edit</a>
+                    <a href="{{ path('accueil_show', {'id': accueil.id}) }}" class="badge badge-primary">show</a>
+                    <a href="{{ path('accueil_edit', {'id': accueil.id}) }}" class="badge badge-primary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -30,6 +33,9 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('accueil_new') }}">Create new</a>
+    <div class='row'>
+        <div class='col-10'></div>
+        <a href="{{ path('accueil_new') }}" class='btn btn-primary'>new</a>
+    </div>
+    
 {% endblock %}

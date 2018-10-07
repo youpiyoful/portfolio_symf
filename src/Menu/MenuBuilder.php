@@ -24,7 +24,11 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('Home', ['route' => 'homepage']);
+        $menu->addChild('Accueil', ['route' => 'accueil_index']);
+        $menu->addChild('Category', ['route' => 'category_index']);
+        $menu->addChild('Competence', ['route' => 'competence_index']);
+        $menu->addChild('Contact', ['route' => 'contact_index']);
+        $menu->addChild('Project', ['route' => 'project_index']);
         // ... add more children
 
         return $menu;

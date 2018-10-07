@@ -1,8 +1,12 @@
-{% extends 'base.html.twig' %}
+ class="badge badge-primary"{% extends 'base.html.twig' %}
 
 {% block title %}Contact index{% endblock %}
 
-{% block body %}
+{% block header %}
+    {{ knp_menu_render('main') }}
+{% endblock %}
+
+{% block main %}
     <h1>Contact index</h1>
 
     <table class="table">
@@ -29,8 +33,8 @@
                 <td>{{ contact.linkedin }}</td>
                 <td>{{ contact.indeed }}</td>
                 <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}" class="badge badge-primary">show</a>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}" class="badge badge-primary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -40,6 +44,9 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class='row'>
+        <div class='col-10'></div>
+        <a href="{{ path('contact_new') }}" class='btn btn-primary'>new</a>
+    </div>
 
-    <a href="{{ path('contact_new') }}">Create new</a>
 {% endblock %}

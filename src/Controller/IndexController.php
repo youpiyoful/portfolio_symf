@@ -23,5 +23,5 @@ class IndexController extends Controller
     {
         return $this->render('Admin/index.html.twig');
     }
-
+    
 }
