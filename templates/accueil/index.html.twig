@@ -3,7 +3,9 @@
 {% block title %}Accueil index{% endblock %}
 
     {% block header %}
-        {{ knp_menu_render('main') }}
+        <nav class="nav flex-column">
+            {{ knp_menu_render('main') }}
+        </nav>
     {% endblock %}
 {% block main %}
     <h1>Accueil index</h1>
